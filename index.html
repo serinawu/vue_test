@@ -5,27 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-    <link class="css" rel="stylesheet" href="./css/style.css">
+    <!-- <link class="css" rel="stylesheet" href="./css/style.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
     <!-- <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script> -->
-    <!-- <script src="./js/js.js"></script> -->
-    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script type="module" src="./js/js.js"></script>
 </head>
 <body>
     <header></header>
     <div id="app" class="demo">{{ message }}</div>
-
-    <script type="module">
-       import{ createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-
-       createApp({
-        data() {
-            return {
-                message: 'Hello Vue!'
-            }
-        }
-       }).mount('#app')
-    </script>
 </body>
 </html>
