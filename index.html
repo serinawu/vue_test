@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-    <script src="https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <script type="module" src="./js/js.js"></script>
 </head>
 <body>
-    <header></header>
-    <div id="app">
+    <div id="todo-list-example">
+        <form v-on:submit.prevent="addNewTodo">
+          <label for="new-todo">添加 todo</label>
+          <input
+            v-model="newTodoText"
+            id="new-todo"
+            placeholder="例如：明天早上跑步"
+          />
+          <button>添加</button>
+        </form>
         <ul>
-            <li v-for="n in evenNumbers">
-               {{ n }}
-            </li>
-        </ul>        
-    </div>
+          <todo-item
+            v-for="(todo, index) in todos"
+            :key="todo.id"
+            :title="todo.title"
+            @remove="todos.splice(index, 1)"
+          ></todo-item>
+        </ul>
+      </div>
 </body>
 </html>
