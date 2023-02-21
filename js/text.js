@@ -16,12 +16,23 @@
 //         }
 //     }).mount('.demo2')
 
+const Site = {
+  data() {
+    return {
+      sites: [
+        { id: 1, title: 'Google' },
+        { id: 2, title: 'kregjl;k' },
+        { id: 1, title: 'cjilje' },
+      ]
+    }
+  }
+}
 
-const app = Vue.createApp({})
+const app = Vue.createApp(Site)
   
-app.component('site-name', {
-  props: ['title'],
-  template: `<h4>{{ title }}</h4>`
+app.component('site-info', {
+  props: ['id','title'],
+  template: `<h4>{{ id }} - {{ title }}</h4>`
 })
  
 app.mount('#app')

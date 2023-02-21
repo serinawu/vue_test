@@ -10,9 +10,11 @@
 </head>
 <body>
     <div id="app">
-      <site-name title="Google"></site-name>
-      <site-name title="facebook"></site-name>
-      <site-name title="youtube"></site-name>
+      <site-info
+      v-for="site in sites"
+      :id="site.id"
+      :title="site.title"
+      ></site-info>
   </div>
 </body>
 </html>
