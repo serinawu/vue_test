@@ -16,14 +16,12 @@
 //         }
 //     }).mount('.demo2')
 
-var bcounter_A = {
-  template: '<h1>自定義</h1>'
-}
 
-const app = Vue.createApp({
-  components: {
-    'button-counter-a': bcounter_A
-  }
+const app = Vue.createApp({})
+  
+app.component('site-name', {
+  props: ['title'],
+  template: `<h4>{{ title }}</h4>`
 })
  
 app.mount('#app')
