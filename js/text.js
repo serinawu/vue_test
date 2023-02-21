@@ -16,19 +16,14 @@
 //         }
 //     }).mount('.demo2')
 
-const app = Vue.createApp({})
- 
-// 定义一个名为 runoob 的新全局组件
-app.component('button-counter', {
-    data() {
-      return {
-        count: 0
-      }
-    },
-    template: `
-    <button @click="count++">
-    點了 {{ count }} 次!
-    </button>`
+var bcounter_A = {
+  template: '<h1>自定義</h1>'
+}
+
+const app = Vue.createApp({
+  components: {
+    'button-counter-a': bcounter_A
+  }
 })
  
 app.mount('#app')
