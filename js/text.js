@@ -16,47 +16,11 @@
 //         }
 //     }).mount('.demo2')
 
-const app = Vue.createApp({
-    data() {
-      return {
-        newTodoText: '',
-        todos: [
-          {
-            id: 1,
-            title: '看电影'
-          },
-          {
-            id: 2,
-            title: '吃饭'
-          },
-          {
-            id: 3,
-            title: '上 RUNOOB 学习'
-          }
-        ],
-        nextTodoId: 4
-      }
-    },
-    methods: {
-      addNewTodo() {
-        this.todos.push({
-          id: this.nextTodoId++,
-          title: this.newTodoText
-        })
-        this.newTodoText = ''
-      }
-    }
-  })
-  
-  app.component('todo-item', {
-    template: `
-      <li>
-        {{ title }}
-        <button @click="$emit('remove')">删除</button>
-      </li>
-    `,
-    props: ['title'],
-    emits: ['remove']
-  })
-  
-  app.mount('#todo-list-example')
+const app = Vue.createApp({})
+ 
+// 定义一个名为 runoob 的新全局组件
+app.component('test', {
+    template: '<h1>自定义组件!</h1>'
+})
+ 
+app.mount('#app')
