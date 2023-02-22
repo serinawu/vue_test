@@ -10,8 +10,9 @@
 </head>
 <body>
     <div id="app">
-      <p style = "font-size: 25px;">計數器: {{ counter }}</p>
-      <button @click = "counter++" style ="font-size: 25px;">點我</button>
+      千米: <input type="text" v-model ="kilometers" @focus="currentlyActiveField = 'kilometers'">
+      米: <input type = "text" v-model ="meters" @focus="currentlyActiveField = 'meters'">
     </div>
+    <p id="info"></p>
 </body>
 </html>
