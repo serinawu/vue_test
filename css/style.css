@@ -1,0 +1,15 @@
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+body div .static {
+  width: 100px;
+  height: 100px;
+}
+body div .active {
+  background: black;
+}
+body div .text-danger {
+  background: red;
+}

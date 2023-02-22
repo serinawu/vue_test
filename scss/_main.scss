@@ -1,0 +1,21 @@
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+
+    div {
+        .static {
+            width: 100px;
+            height: 100px;
+        }
+
+        .active {
+            background: black;
+        }
+
+        .text-danger {
+            background: red;
+        }
+    }
+
+}

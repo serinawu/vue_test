@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    <link class="css" rel="stylesheet" href="./css/style.css"></link>
     <script src="https://unpkg.com/vue@next"></script>
     <script type="module" src="./js/js.js"></script>
+    <!-- <style>
+      .static {
+        width: 100px;
+        height: 100px;
+      }
+      .active {
+        background: green;
+      }
+      .text-danger {
+        background: red;
+      }
+    </style> -->
 </head>
 <body>
-    <div id="app">
-      千米: <input type="text" v-model ="kilometers" @focus="currentlyActiveField = 'kilometers'">
-      米: <input type = "text" v-model ="meters" @focus="currentlyActiveField = 'meters'">
-    </div>
-    <p id="info"></p>
+   <div id="app">
+      <div class="static" :class="{ 'active': isActive, 'text-danger': hasError }"></div>
+   </div>
 </body>
 </html>
