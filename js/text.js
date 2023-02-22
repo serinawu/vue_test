@@ -22,8 +22,16 @@
 const app = {
   data() {
     return {
-      isActive: false,
-      hasError: true
+      isActive: true,
+      error: null
+    }
+  },
+  computed: {
+    classObject() {
+      return {
+        active: this.isActive && !this.error,
+        'text-danger': this.error && this.error.type === 'fatal'
+      }
     }
   }
 }
