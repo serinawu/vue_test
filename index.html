@@ -10,11 +10,11 @@
 </head>
 <body>
     <div id="app">
-      <site-info
-      v-for="site in sites"
-      :id="site.id"
-      :title="site.title"
-      ></site-info>
-  </div>
+      <p>原始字符串: {{ message }}</p>
+      <p>计算后反转字符串: {{ reverseMessage }}</p>
+    </div>
+    <div id="app2">
+      {{ message.split('').reverse().join('') }}
+    </div>
 </body>
 </html>

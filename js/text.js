@@ -16,23 +16,26 @@
 //         }
 //     }).mount('.demo2')
 
-const Site = {
+const app = {
   data() {
     return {
-      sites: [
-        { id: 1, title: 'Google' },
-        { id: 2, title: 'kregjl;k' },
-        { id: 1, title: 'cjilje' },
-      ]
+      message: 'RUNOOB!!'
+    }
+  },
+  computed: {
+    reverseMessage: function() {
+      return this.message.split('').reverse().join('')
     }
   }
 }
 
-const app = Vue.createApp(Site)
-  
-app.component('site-info', {
-  props: ['id','title'],
-  template: `<h4>{{ id }} - {{ title }}</h4>`
-})
- 
-app.mount('#app')
+const app2 = {
+  data() {
+    return {
+      message: 'RUNOOB!!'
+    }
+  }
+}
+
+Vue.createApp(app).mount('#app')
+Vue.createApp(app).mount('#app2')
