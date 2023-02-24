@@ -23,7 +23,8 @@
 </head>
 <body>
    <div id="app">
-      <div class="static" v-bind:class="classObject"></div>
+      <button @click="greet">點我</button>
+      <p>這按鈕被點了 {{ counter }} 次</p>
    </div>
 </body>
 </html>

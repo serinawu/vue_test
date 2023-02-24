@@ -9,12 +9,20 @@ body {
             height: 100px;
         }
 
-        .active {
+        .classA {
             background: black;
         }
 
-        .text-danger {
-            background: red;
+        .classB {
+            color: white;
+        }
+
+        .classC {
+            border: 10px solid yellow;
+        }
+
+        .classE {
+            background: green;
         }
     }
 

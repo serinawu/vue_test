@@ -22,18 +22,21 @@
 const app = {
   data() {
     return {
-      isActive: true,
-      error: null
+      name: 'rrrrrrr'
     }
   },
-  computed: {
-    classObject() {
-      return {
-        active: this.isActive && !this.error,
-        'text-danger': this.error && this.error.type === 'fatal'
+  methods: {
+    greet(event) {
+      // `methods` 内部的 `this` 指向当前活动实例
+      alert('Hello' + this.name + '!')
+      // `event` 是原生 DOM event
+      if (event) {
+        alert(event.target.tagName)
       }
     }
   }
 }
+
+
 
 Vue.createApp(app).mount('#app')

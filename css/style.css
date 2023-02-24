@@ -7,9 +7,15 @@ body div .static {
   width: 100px;
   height: 100px;
 }
-body div .active {
+body div .classA {
   background: black;
 }
-body div .text-danger {
-  background: red;
+body div .classB {
+  color: white;
+}
+body div .classC {
+  border: 10px solid yellow;
+}
+body div .classE {
+  background: green;
 }
