@@ -22,11 +22,13 @@
 const app = {
   data() {
     return {
-      message: '',
-      message2: 'rhgduhgdifuhgdifuhg'
+      checked: false,
+      checkedNames: [],
+      picked : 'Runoob'
     }
   }
 }
+
 
 
 
