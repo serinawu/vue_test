@@ -45,6 +45,35 @@
       <label for="google">Google</label>
       <br>
       <span>选中值为: {{ picked }}</span>
+      <br>
+      <br>
+      <select v-model="selected" name="site">
+        <option value="">選擇一個網站</option>
+        <option value="https://openai.com/blog/chatgpt">chatgpt</option>
+        <option value="https://google.com">google</option>
+      </select>
+      <div id="output">
+        選擇的網站是: {{ selected }}
+      </div>
+      <br>
+      <br>
+      <select v-model="chossed" name="multiWeb" multiple>
+        <option value="https://facebook.com">facebook</option>
+        <option value="https://instagram.com">instagram</option>
+        <option value="https://twitter.com">twitter</option>
+      </select>
+      <div id="output">
+        選擇的網站是: {{ chossed }}
+      </div>
+      <br>
+      <br>
+      <!-- 使用 v-for 循环输出选项： -->
+      <select v-model="select">
+        <option v-for="option in options" :value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+      <span>選擇的是: {{ select }}</span>
     </div>
 </body>
 </html>
