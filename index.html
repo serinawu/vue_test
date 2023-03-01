@@ -23,8 +23,14 @@
 </head>
 <body>
    <div id="app">
-      <button @click="greet">點我</button>
-      <p>這按鈕被點了 {{ counter }} 次</p>
-   </div>
+      <p>input 元素:</p>
+      <input v-model="message" placeholder="編輯我....">
+      <p>input 表單消息是: {{ message }}</p>
+
+      <p>textarea 元素</p>
+      <textarea v-model="message2" placeholder="多行文本輸入..."></textarea>
+      <p>textarea 表單消息是:</p>
+      <p style="white-space: pre">{{ message2 }}</p>
+    </div>
 </body>
 </html>

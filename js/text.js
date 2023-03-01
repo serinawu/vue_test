@@ -22,17 +22,8 @@
 const app = {
   data() {
     return {
-      name: 'rrrrrrr'
-    }
-  },
-  methods: {
-    greet(event) {
-      // `methods` 内部的 `this` 指向当前活动实例
-      alert('Hello' + this.name + '!')
-      // `event` 是原生 DOM event
-      if (event) {
-        alert(event.target.tagName)
-      }
+      message: '',
+      message2: 'rhgduhgdifuhgdifuhg'
     }
   }
 }
