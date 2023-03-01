@@ -20,16 +20,16 @@
 const app = {
   data() {
     return {
-      info: 'Ajax 測試!!'
+      info: null
     }
   },
   mounted () {
     axios
-    .get('https://www.runoob.com/try/ajax/json_demo.json')
-    .then(response => (this.info = response))
-    .catch(function (error) {
+     .post('https://www.runoob.com/try/ajax/demo_axios_post.php')
+     .then(response => (this.info = response))
+     .catch(function (error){
       console.log(error);
-    })
+     })
   }
 }
 
