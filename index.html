@@ -9,22 +9,26 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
     <script type="module" src="./js/js.js"></script>
-    <!-- <style>
-      .static {
-        width: 100px;
-        height: 100px;
-      }
-      .active {
-        background: green;
-      }
-      .text-danger {
-        background: red;
-      }
-    </style> -->
 </head>
 <body>
-   <div id="app">
-      {{ info }}
+   <div id="app" v-cloak> <!--v-cloak防止網路問題頁面閃爍-->
+      <h1>Todo app with Vue.js</h1>
+      <form @submit.prevent="addTodo"> <!--prevent修飾符:這裡防止表單送出，頁面不會閃爍-->
+        <input autofocus placeholder="Wash fruit" v-model="newTodoText">  <!--v-model: 雙向數據綁定 / 將newTodoText涵的資料放(導)入-->
+        <input type="submit" value="Add">
+      </form>
+      <ul v-show="todos.length">  <!--v-show=>根據條件展示-->
+        <li v-for="todo in todos" :key="todo.id"> <!--v-for將todos裡每個資料灌進來-->
+          <input :id="'todo-' + todo.id" v-model="todo.completed" type="checkbox"> <!--:id=>讓每個項目都id+序號 v-model: 雙向數據綁定todo裡的completed狀態-->
+          <label :for="'todo-' +todo.id">{{ todo.contents }}</label> <!--:for=>讓每個項目都id+序號 嵌入todo資料的內容-->
+          <button @click="removeTodo(todo)">Remove 🗑️</button> <!--@click點擊 執行removeTodo 這個函數-->
+        </li>
+      </ul>
+      <p v-show="todos.length"> <!--v-show=>根據todos的數量顯示與否-->
+        <span>You have</span>
+        <strong>{{ remaining }}</strong>
+        <span>{{ remaining === 1 ? 'item' : 'items'}} remaining</span>
+      </p>
    </div>
 </body>
 </html>

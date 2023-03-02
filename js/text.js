@@ -1,36 +1,35 @@
-// import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+const initialTodos = [ // 初始資料
+  { id: 1, contents: "Go for a jog", completed: false },
+  { id: 2, contents: "Buy bread", completed: false },
+  { id: 3, contents: "Read JavaScript codelab", completed: true } //已完成
+];
 
-// const { VueElement } = require("vue")
-        
-//     createApp({
-//         data() {
-//             return {
-//                 message: 'Hello Vue!'
-//             }
-//         }
-//     }).mount('.demo')
-
-//     createApp({
-//         data() {
-//             return {
-//                 message: 'Hello 123123'
-//             }
-//         }
-//     }).mount('.demo2')
-const app = {
-  data() {
+Vue.createApp({
+  data() { //數據返回值
     return {
-      info: null
+      todos: initialTodos, //帶入初始資料
+      newTodoText: "" //新增的代辦值
+    };
+  },
+  computed: { //計算方法
+    remaining() { //計算未完成的函數的數量
+      return this.todos.filter((todo) => !todo.completed).length;
     }
   },
-  mounted () {
-    axios
-     .post('https://www.runoob.com/try/ajax/demo_axios_post.php')
-     .then(response => (this.info = response))
-     .catch(function (error){
-      console.log(error);
-     })
+  methods: { //方法
+    addTodo() { //新增代辦事項函數
+      if (!this.newTodoText) { //當 新增的代辦值 有值回傳時
+        return;
+      }
+      this.todos.push({ //這個todos的資料庫新增(推播)
+        id: Date.now(),
+        contents: this.newTodoText, //內容= 新增的代辦值
+        completed: false //狀態= 顯示未完成
+      });
+     this.newTodoText = ""; //完成上面操作input值會為空
+    },
+    removeTodo ({ id }) { //刪除代辦事項函數
+      this.todos = this.todos.filter((todo) => todo.id !== id); //這個todos的資料庫過濾掉點擊的代辦且移除
+    }
   }
-}
-
-Vue.createApp(app).mount('#app')
+}).mount("#app");

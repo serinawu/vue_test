@@ -1,29 +1,35 @@
+:root {
+    font-size: 1.2rem;
+}
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
+    font-size: 1.2rem;
     margin: 0;
 
-    div {
-        .static {
-            width: 100px;
-            height: 100px;
-        }
+    input {
+        padding: 0.2rem;
+        font-size: 1.1rem;
 
-        .classA {
-            background: black;
-        }
-
-        .classB {
-            color: white;
-        }
-
-        .classC {
-            border: 10px solid yellow;
-        }
-
-        .classE {
-            background: green;
+        &[type="submit"],
+        button {
+            cursor: pointer;
+            font-size: inherit;
         }
     }
 
+    ul {
+        padding-left: unset;
+        margin: 1.5rem 0 2rem 0;
+
+        li {
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
 }
